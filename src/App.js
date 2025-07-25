@@ -9,38 +9,48 @@ function App() {
     developer: 'Looprix',
     contact: { name: 'Ahmed Junaid', phone: '03379242220' },
     currentVersion: '1.2.0',
+    downloadBaseUrl: 'https://horizon-inn-updates.vercel.app/',
     updates: [
-       {
-    version: '1.1.0',
-    date: '2025-07-25',
-    notes: [
-      '✅ Initial release: reserving, billing, profiles',
-      '✅ Dashboard with real‑time room status',
-      '✅ Guest search & detailed history',
-      
-    ],
-  },
-  {
-    version: '1.2.0',
-    date: '2025-07-25',
-    notes: [
-      '✅ Backup & restore functionality',
-      '✅ Kitchen & laundry service tracking',
-      '✅ Analytics: occupancy, revenue, top services',
-      '✅ Settings: theme, account, local sync',
-
-    ],
-  },
+      {
+        version: '1.1.0',
+        date: '2025-07-25',
+        notes: [
+          '✅ Initial release: reserving, billing, profiles',
+          '✅ Dashboard with real‑time room status',
+          '✅ Guest search & detailed history',
+        ],
+      },
+      {
+        version: '1.2.0',
+        date: '2025-07-25',
+        notes: [
+          '✅ Backup & restore functionality',
+          '✅ Kitchen & laundry service tracking',
+          '✅ Analytics: occupancy, revenue, top services',
+          '✅ Settings: theme, account, local sync',
+        ],
+      },
     ],
   };
 
-  
+  // Serve the .exe installer
+  const downloadUrl = `${appInfo.downloadBaseUrl}/horizon-inn-v${appInfo.currentVersion}.exe`;
+
   return (
     <div className="app">
       <header className="hero">
         <h1>{appInfo.name}</h1>
         <p className="tagline">{appInfo.tagline}</p>
         <div className="version-badge">{appInfo.currentVersion}</div>
+
+        {/* Download button now points to .exe */}
+        <a
+          href={downloadUrl}
+          className="download-button"
+          download={`Horizon-Inn-v${appInfo.currentVersion}.exe`}
+        >
+          Download v{appInfo.currentVersion} (Windows EXE)
+        </a>
       </header>
 
       <main className="content">
