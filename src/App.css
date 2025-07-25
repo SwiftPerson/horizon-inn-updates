@@ -69,6 +69,56 @@ body, html, #root {
   50%      { transform: scale(1.1); }
 }
 
+
+
+.download-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.7);
+}
+
+.download-icon {
+  font-size: 1.8rem;
+}
+
+.download-details {
+  flex: 1;
+}
+
+.download-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.download-version {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.download-button {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.download-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
 .content {
   flex: 1;
   max-width: 900px;

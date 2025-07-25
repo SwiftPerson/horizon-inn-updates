@@ -38,20 +38,28 @@ function App() {
 
   return (
     <div className="app">
-      <header className="hero">
+            <header className="hero">
         <h1>{appInfo.name}</h1>
         <p className="tagline">{appInfo.tagline}</p>
         <div className="version-badge">{appInfo.currentVersion}</div>
 
-        {/* Download button now points to .exe */}
-        <a
-          href={downloadUrl}
-          className="download-button"
-          download={`Horizon-Inn-v${appInfo.currentVersion}.exe`}
-        >
-          Download v{appInfo.currentVersion} (Windows EXE)
-        </a>
+        {/* ↓ New download card ↓ */}
+        <div className="download-card">
+          <div className="download-icon">⬇️</div>
+          <div className="download-details">
+            <div className="download-title">Download Latest Version</div>
+            <div className="download-version">v{appInfo.currentVersion}</div>
+          </div>
+          <a
+            href={downloadUrl}
+            className="download-button"
+            download={`Horizon-Inn-v${appInfo.currentVersion}.exe`}
+          >
+            Get Installer
+          </a>
+        </div>
       </header>
+
 
       <main className="content">
         <h2>What’s New</h2>
