@@ -11,21 +11,30 @@ function App() {
     currentVersion: '1.2.0',
     updates: [
        {
-    version: '1.2.0',
+    version: '1.1.0',
     date: '2025-07-25',
     notes: [
       '✅ Initial release: reserving, billing, profiles',
       '✅ Dashboard with real‑time room status',
       '✅ Guest search & detailed history',
+      
+    ],
+  },
+  {
+    version: '1.2.0',
+    date: '2025-07-25',
+    notes: [
       '✅ Backup & restore functionality',
       '✅ Kitchen & laundry service tracking',
       '✅ Analytics: occupancy, revenue, top services',
       '✅ Settings: theme, account, local sync',
+
     ],
   },
     ],
   };
 
+  
   return (
     <div className="app">
       <header className="hero">
