@@ -1,52 +1,25 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import './UpdateList.css';
+import React from 'react';
 
 export default function UpdateList({ updates }) {
-  const [openVersion, setOpenVersion] = useState(null);
-
-  const toggle = (v) =>
-    setOpenVersion(openVersion === v ? null : v);
+  if (!updates.length) {
+    return <p className="no-results">No matching updates found.</p>;
+  }
 
   return (
-    <div className="updates">
+    <div className="update-list">
       {updates.map(({ version, date, notes }) => (
-        <div
-          key={version}
-          className={`card ${openVersion === version ? 'open' : ''}`}
-        >
-          <div
-            className="card-header"
-            onClick={() => toggle(version)}
-          >
-            <div>
-              <span className="ver">v{version}</span>
-              <span className="date">{date}</span>
-            </div>
-            <div className="chevron">
-              {openVersion === version ? '▲' : '▼'}
-            </div>
+        <div key={version} className="update-card">
+          <div className="update-header">
+            <span className="ver">v{version} 🕚</span>
+            <time className="date">{date}</time>
           </div>
-
-          <div className="card-body">
-            <ul>
-              {notes.map((n, i) => (
-                <li key={i}>{n}</li>
-              ))}
-            </ul>
-          </div>
+          <ul className="notes">
+            {notes.map((n, i) => (
+              <li key={i}>{n}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
   );
 }
-
-UpdateList.propTypes = {
-  updates: PropTypes.arrayOf(
-    PropTypes.shape({
-      version: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      notes: PropTypes.arrayOf(PropTypes.string).isRequired,
-    })
-  ).isRequired,
-};
