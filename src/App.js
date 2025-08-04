@@ -8,9 +8,20 @@ const APP_INFO = {
   tagline: 'Your Guest House Management Solution.',
   developer: 'Looprix',
   contact: { name: 'Ahmed Junaid', phone: '03379242220' },
-  currentVersion: '1.3.0',
+  currentVersion: '1.4.0',
   downloadBaseUrl: 'https://horizon-inn-updates.vercel.app/',
   updates: [
+    {
+       version: '1.4.0',
+      date: '2025-08-4',
+      notes: [
+        'Bug fixes',
+        'Added an option to edit the active reservation',
+        'Removed the restriction from date selection',
+        'Added show password option',
+        'Changed kitchen and laundry style and added Search bar to navigate'
+      ]
+    },
     {
       version: '1.3.0',
       date: '2025-07-31',
