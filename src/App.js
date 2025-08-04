@@ -57,7 +57,7 @@ const APP_INFO = {
 function App() {
   const [filter, setFilter] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const downloadUrl = `${APP_INFO.downloadBaseUrl}/horizon-inn-v${APP_INFO.currentVersion}.exe`;
+  const downloadUrl = `${APP_INFO.downloadBaseUrl}/horizon-in-v${APP_INFO.currentVersion}.exe`;
 
   // show "scroll to top" button when scrolled down
   useEffect(() => {
